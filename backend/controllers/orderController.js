@@ -16,15 +16,18 @@ const getOrders = asyncHandler(async (req, res) => {
 // @route   POST /api/orders
 // @access  Private
 const setOrder = asyncHandler(async (req, res) => {
-  if (!req.body.text) {
+  if (!req.body.productID) {
     res.status(400)
     throw new Error('Please add a text field')
   }
 
   const order = await Order.create({
-    text: req.body.text,
-    text2: req.body.text2,
+    productID: req.body.productID,
+    shopID: req.body.shopID,
     user: req.user.id,
+    orderID: Date.now(),
+    productName: "Dias",
+    soldPrice: "5",       
   })
 
   res.status(200).json(order)

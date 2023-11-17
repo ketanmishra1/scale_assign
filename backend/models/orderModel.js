@@ -7,13 +7,25 @@ const orderSchema = mongoose.Schema(
       required: true,
       ref: 'User',
     },
-    text: {
+    productID: {
       type: String,
-      required: [true, 'Please add a text value'],
+      required: [true, 'Please add a Prodcut ID'],
     },
-    text2: {
+    shopID: {
       type: String,
-      required: [true, 'Please add a text2 value'],
+      required: [true, 'Please add a Shop ID'],
+    },
+    orderID: {
+      type: String,
+      required: [true, 'Please add a Order ID'],
+    },
+    productName: {
+      type: String,
+      required: [true, 'Please add a Product Name'],
+    },
+    soldPrice: {
+      type: String,
+      required: [true, 'Please add a Sold Price'],
     },
   },
   {
